@@ -5,17 +5,16 @@ import { useUser } from '../../hooks/useUser';
 export const UserForm = memo(() => {
   const [user, loading, error, userForm] = useUser();
 
-  if (loading) return <>loading</>;
-  if (error) return <>error</>;
+  if (loading) return <div data-testid='loading'>loading</div>;
+  if (error) return <div data-testid='error'>error</div>;
 
   return (
     <div>
       <div>
-        <input type="text" onChange={userForm.onIdChange} value={userForm.userIdForm} />
-        <button onClick={userForm.submit}>SUBMIT</button>
+        <input type="text" data-testid='id-input' onChange={userForm.onIdChange} value={userForm.userIdForm} />
+        <button onClick={userForm.submit} data-testid='submit-button'>SUBMIT</button>
       </div>
-      {/* <div id='user_name'>name</div> */}
-      <div>{user === null ? 'NO USER' : user.name}</div>
+      <div data-testid='name-display'>{user === null ? 'NO USER' : user.name}</div>
     </div>
   );
 });
