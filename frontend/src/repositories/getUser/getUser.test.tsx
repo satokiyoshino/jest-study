@@ -6,9 +6,7 @@ describe('getUser', () => {
     expect(userName.name).toEqual('John');
   })
   
-  // test('データが取れなかった時のテスト', async () => {
-  //   const userName = await getUser('100');
-  //   console.log(userName)
-  //   expect(userName).toThrow('There is no user')
-  // })
+  test('データが取れなかった時のテスト', async () => {
+    await expect(getUser("100")).rejects.toThrow()
+  })
 })
