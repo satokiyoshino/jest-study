@@ -30,5 +30,5 @@ export const useUser = () => {
     }
   }, [userIdForm]);
 
-  return [user, loading, error, { userIdForm, onIdChange, submit }] as const;
+  return [user, loading, error, { userIdForm, setUser, onIdChange, submit }] as const;
 };

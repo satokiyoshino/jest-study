@@ -1,6 +1,6 @@
 import type { User } from '../../hooks/useUser';
 
-const _users: Record<string, User> = {
+export const _users: Record<string, User> = {
   '1': { name: 'John' },
   '2': { name: 'Bob' },
   '3': { name: 'Smith' },

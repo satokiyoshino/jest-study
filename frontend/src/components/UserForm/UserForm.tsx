@@ -14,6 +14,7 @@ export const UserForm = memo(() => {
         <input type="text" onChange={userForm.onIdChange} value={userForm.userIdForm} />
         <button onClick={userForm.submit}>SUBMIT</button>
       </div>
+      {/* <div id='user_name'>name</div> */}
       <div>{user === null ? 'NO USER' : user.name}</div>
     </div>
   );
